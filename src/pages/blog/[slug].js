@@ -12,7 +12,7 @@ import Main from "@/templates/main";
 export default function PostPage({ frontmatter: { title, date, cover_image }, slug, content }) {
   return (
     <Main>
-      <Button className={styles.link} variant="contained">
+      <Button sx={{ mt: 3, ml: 4 }} variant="contained">
         <Link href="/"> Go Back </Link>
       </Button>
       <div className={styles.container}>
