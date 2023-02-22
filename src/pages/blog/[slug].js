@@ -12,20 +12,16 @@ import Main from "@/templates/main";
 export default function PostPage({ frontmatter: { title, date, cover_image }, slug, content }) {
   return (
     <Main>
-      <div className={styles["blog-page"]}>
-        <Link href="/">
-          <Button className={styles.link} variant="contained">
-            Go Back
-          </Button>
-        </Link>
-        <div className={styles.container}>
-          <p className={styles.title}>{title}</p>
-          <p className={styles.date}>Posted on {date}</p>
-          <Image className={styles.img} src={cover_image} alt="" width={688} height={459} />
-          {/* <img src={cover_image} alt="" /> */}
-          <div className="post-body">
-            <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
-          </div>
+      <Button className={styles.link} variant="contained">
+        <Link href="/"> Go Back </Link>
+      </Button>
+      <div className={styles.container}>
+        <p className={styles.title}>{title}</p>
+        <p className={styles.date}>Posted on {date}</p>
+        <Image className={styles.img} src={cover_image} alt="" width={688} height={459} />
+        {/* <img src={cover_image} alt="" /> */}
+        <div className="post-body">
+          <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
         </div>
       </div>
     </Main>
