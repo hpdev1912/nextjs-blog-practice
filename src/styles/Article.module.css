@@ -1,20 +1,20 @@
 .container {
   display: flex;
-  max-width: 50%;
+  width: calc(50% - 40px);
 
   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-  margin: 0 20px;
+  margin: 20px;
   border: 1px solid rgba(0, 0, 0, 0.06);
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .info-container {
   margin: 16px;
-  font-size: 1.5rem;
+  font-size: 14px;
 }
 
 .title {
-  font-size: 2rem;
+  font-size: 20px;
   line-height: 1rem;
   font-weight: 300;
 }
@@ -29,4 +29,9 @@
 
 .link {
   color: #1976d2;
+}
+
+.img {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }

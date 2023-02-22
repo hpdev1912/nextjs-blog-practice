@@ -1,7 +1,8 @@
 import React from "react";
+import styles from "@/styles/Footer.module.css";
 
 const Footer = () => {
-  return <div>Footer</div>;
+  return <footer className={styles.footer}>Simple Blog using Nextjs</footer>;
 };
 
 export default Footer;

@@ -1,35 +1,34 @@
+import Button from "@mui/material/Button";
 import fs from "fs";
-import path from "path";
 import matter from "gray-matter";
 import { marked } from "marked";
-import Link from "next/link";
-import Button from "@mui/material/Button";
 import Image from "next/image";
+import Link from "next/link";
+import path from "path";
 
 import styles from "@/styles/Blog.module.css";
-import Header from "@/layouts/Header";
+import Main from "@/templates/main";
 
 export default function PostPage({ frontmatter: { title, date, cover_image }, slug, content }) {
-  const abcd = marked(content);
-  console.log(abcd);
   return (
-    <div className={styles["blog-page"]}>
-      <Header />
-      <Link href="/">
-        <Button className={styles.link} variant="contained">
-          Go Back
-        </Button>
-      </Link>
-      <div className={styles.container}>
-        <h1 className="post-title">{title}</h1>
-        <div className="post-date">Posted on {date}</div>
-        <Image src={cover_image} alt="" width={688} height={459} />
-        {/* <img src={cover_image} alt="" /> */}
-        <div className="post-body">
-          <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
+    <Main>
+      <div className={styles["blog-page"]}>
+        <Link href="/">
+          <Button className={styles.link} variant="contained">
+            Go Back
+          </Button>
+        </Link>
+        <div className={styles.container}>
+          <h1 className="post-title">{title}</h1>
+          <div className="post-date">Posted on {date}</div>
+          <Image src={cover_image} alt="" width={688} height={459} />
+          {/* <img src={cover_image} alt="" /> */}
+          <div className="post-body">
+            <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
+          </div>
         </div>
       </div>
-    </div>
+    </Main>
   );
 }
 

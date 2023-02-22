@@ -4,8 +4,6 @@ import React from "react";
 import styles from "@/styles/Article.module.css";
 
 const Article = ({ post }) => {
-  console.log("Article");
-  console.log(post);
   const {
     slug,
     frontmatter: { title, date, excerpt, cover_image },
@@ -20,7 +18,7 @@ const Article = ({ post }) => {
           Continue reading....
         </Link>
       </div>
-      <Image src={cover_image} alt="Somethings" width={250} height={250} />
+      <Image className={styles.img} src={cover_image} alt="Somethings" width={250} height={250} />
     </div>
   );
 };

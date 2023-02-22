@@ -1,6 +1,7 @@
 .content {
   margin-top: 24px;
   position: relative;
+  margin-bottom: 100px;
 }
 
 .img {
@@ -34,4 +35,6 @@
   justify-content: space-between;
   padding-top: 32px;
   margin: 0 -20px;
+
+  flex-wrap: wrap;
 }
