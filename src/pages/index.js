@@ -1,5 +1,5 @@
 import Content from "@/layouts/content";
-import { getSortedPostsData } from "@/lib/post";
+import { getSortedPostsData } from "@/utils/post";
 import Main from "@/templates/main";
 
 export default function Home({ posts }) {
@@ -11,6 +11,7 @@ export default function Home({ posts }) {
 }
 
 export async function getStaticProps() {
+  //Get post data from md file
   const posts = await getSortedPostsData();
   return {
     props: {
