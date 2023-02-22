@@ -19,9 +19,9 @@ export default function PostPage({ frontmatter: { title, date, cover_image }, sl
           </Button>
         </Link>
         <div className={styles.container}>
-          <h1 className="post-title">{title}</h1>
-          <div className="post-date">Posted on {date}</div>
-          <Image src={cover_image} alt="" width={688} height={459} />
+          <p className={styles.title}>{title}</p>
+          <p className={styles.date}>Posted on {date}</p>
+          <Image className={styles.img} src={cover_image} alt="" width={688} height={459} />
           {/* <img src={cover_image} alt="" /> */}
           <div className="post-body">
             <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
