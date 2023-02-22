@@ -16,7 +16,7 @@ const Content = ({ posts }) => {
         <p className={styles.single}>Title of a longer featured blog post</p>
         <p className={styles.multiple}>
           Multiple lines of text that form the lede, informing new readers quickly and efficiently
-          about what's most interesting in this post's contents.
+          about what is the most interesting in this contents.
         </p>
       </div>
       <div className={styles["article-container"]}>
