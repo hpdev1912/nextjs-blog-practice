@@ -1,0 +1,37 @@
+.content {
+  margin-top: 24px;
+  position: relative;
+}
+
+.img {
+  opacity: 0.5;
+  object-fit: cover;
+}
+
+.title {
+  position: absolute;
+  width: 528px;
+  top: 48px;
+  left: 48px;
+
+  color: #141212;
+  box-shadow: 2px 2px #888888;
+}
+
+.single {
+  font-size: 3rem;
+  margin-bottom: 16px;
+  font-weight: bold;
+}
+
+.multiple {
+  font-size: 24px;
+}
+
+.article-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 32px;
+  margin: 0 -20px;
+}

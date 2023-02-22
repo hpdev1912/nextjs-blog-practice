@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  max-width: 50%;
+
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  margin: 0 20px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 5px;
+}
+
+.info-container {
+  margin: 16px;
+  font-size: 1.5rem;
+}
+
+.title {
+  font-size: 2rem;
+  line-height: 1rem;
+  font-weight: 300;
+}
+
+.info-container > p {
+  margin-bottom: 16px;
+}
+
+.date {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.link {
+  color: #1976d2;
+}
