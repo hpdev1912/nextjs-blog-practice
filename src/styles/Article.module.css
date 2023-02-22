@@ -11,6 +11,7 @@
 .info-container {
   margin: 16px;
   font-size: 14px;
+  min-width: 382px;
 }
 
 .title {
