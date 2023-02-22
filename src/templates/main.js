@@ -1,15 +1,12 @@
-import Footer from "@/layouts/Footer";
-import Header from "@/layouts/Header";
+import Footer from "@/layouts/footer";
+import Header from "@/layouts/header";
 const Main = ({ meta, children }) => {
   return (
     <div>
       {meta}
-
-      <div className="mx-auto max-w-screen-md">
+      <div>
         <Header />
-
         <main>{children}</main>
-
         <Footer />
       </div>
     </div>
