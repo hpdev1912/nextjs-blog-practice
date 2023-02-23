@@ -1,6 +1,7 @@
 import ArticleList from "@/components/ArticleList";
 import styles from "@/styles/Content.module.css";
 import Image from "next/image";
+
 import { useSelector } from "react-redux";
 
 const Content = () => {

@@ -9,11 +9,19 @@ import path from "path";
 import styles from "@/styles/Blog.module.css";
 import Main from "@/templates/main";
 import { useSelector } from "react-redux";
+import { useEffect } from "react";
 
 export default function PostPage({ frontmatter: { title, date, cover_image }, slug, content }) {
   const currentPost = useSelector((state) =>
     state.posts.posts.filter((post) => post.slug === slug)
   );
+  const postState = useSelector((state) => state.posts.posts);
+
+  useEffect(() => {
+    return () => {
+      localStorage.setItem("POST_DATA", JSON.stringify(postState));
+    };
+  });
 
   return (
     <Main>

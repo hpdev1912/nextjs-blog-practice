@@ -1,13 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "@/styles/Article.module.css";
 import { Button } from "@mui/material";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { togglePostRead } from "@/app/postSlice";
 
 const Article = ({ post }) => {
   const dispatch = useDispatch();
+  const postState = useSelector((state) => state.posts.posts);
 
   const {
     slug,
@@ -15,9 +16,11 @@ const Article = ({ post }) => {
     isRead,
   } = post;
 
+  useEffect(() => {
+    localStorage.setItem("POST_DATA", JSON.stringify(postState));
+  });
+
   const handleButtonClick = () => {
-    const timeElapsed = Date.now();
-    const today = new Date(timeElapsed);
     dispatch(togglePostRead({ slug, time: "Dec 19, 2021" }));
   };
 

@@ -6,12 +6,18 @@ export const postSlice = createSlice({
   name: "posts",
   initialState,
   reducers: {
-    setPosts(state, action) {
-      state.posts = action.payload.map((post) => ({
+    initPostState(state, action) {
+      const postState = action.payload.map((post) => ({
         ...post,
         isRead: false,
         timeRead: "",
       }));
+      state.posts = postState;
+      localStorage.setItem("POST_DATA", JSON.stringify(postState));
+    },
+    setPostState(state, action) {
+      state.posts = action.payload;
+      localStorage.setItem("POST_DATA", JSON.stringify(state.posts));
     },
     togglePostRead(state, action) {
       const { slug, time } = action.payload;
@@ -27,6 +33,6 @@ export const postSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { setPosts, togglePostRead } = postSlice.actions;
+export const { initPostState, setPostState, togglePostRead } = postSlice.actions;
 
 export default postSlice.reducer;
