@@ -8,8 +8,13 @@ import path from "path";
 
 import styles from "@/styles/Blog.module.css";
 import Main from "@/templates/main";
+import { useSelector } from "react-redux";
 
 export default function PostPage({ frontmatter: { title, date, cover_image }, slug, content }) {
+  const currentPost = useSelector((state) =>
+    state.posts.posts.filter((post) => post.slug === slug)
+  );
+
   return (
     <Main>
       <Button sx={{ mt: 3, ml: 4 }} variant="contained">
@@ -18,6 +23,9 @@ export default function PostPage({ frontmatter: { title, date, cover_image }, sl
       <div className={styles.container}>
         <p className={styles.title}>{title}</p>
         <p className={styles.date}>Posted on {date}</p>
+        <p style={{ fontSize: "14px", color: "gray" }}>
+          {currentPost[0]?.timeRead && `Last view on ${currentPost[0]?.timeRead}`}
+        </p>
         <Image className={styles.img} src={cover_image} alt="" width={688} height={459} />
         {/* <img src={cover_image} alt="" /> */}
         <div className="post-body">

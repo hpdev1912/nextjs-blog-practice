@@ -1,8 +1,11 @@
 import ArticleList from "@/components/ArticleList";
 import styles from "@/styles/Content.module.css";
 import Image from "next/image";
+import { useSelector } from "react-redux";
 
-const Content = ({ posts }) => {
+const Content = () => {
+  const postList = useSelector((state) => state.posts.posts);
+
   return (
     <div className={styles.content}>
       <Image
@@ -20,7 +23,7 @@ const Content = ({ posts }) => {
         </p>
       </div>
       <div className={styles["article-container"]}>
-        <ArticleList posts={posts} />
+        <ArticleList postsList={postList} />
       </div>
     </div>
   );

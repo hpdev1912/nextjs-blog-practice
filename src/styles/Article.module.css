@@ -10,7 +10,7 @@
 
 .info-container {
   margin: 16px;
-  font-size: 14px;
+  font-size: 18px;
   min-width: 382px;
 }
 
@@ -30,6 +30,10 @@
 
 .link {
   color: #1976d2;
+}
+
+.link-active {
+  color: gray;
 }
 
 .img {
